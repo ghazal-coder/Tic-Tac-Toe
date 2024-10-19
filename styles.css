@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #FF6B6B; /* Bright Red */
+    --secondary-color: #4ECDC4; /* Teal */
+    --background-color: #F7FFF7; /* Light Green */
+    --cell-color: #FFFFFF; /* White */
+    --text-color: #1A1A1A; /* Dark Gray */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: var(--cell-color);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+}
+
+.game-title {
+    color: var(--primary-color);
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.player-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.player {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.player.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: var(--cell-color);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cell:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.cell.X {
+    color: var(--primary-color); /* Bright Red */
+}
+
+.cell.O {
+    color: var(--secondary-color); /* Teal */
+}
+
+#reset-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255,107,107,0.3);
+}
+
+#reset-btn:hover {
+    background-color: #FF4D4D; /* Darker Red */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: var(--cell-color);
+    margin: auto; 
+   padding-top :10%;
+   padding-bottom :10%;
+   padding-left :5%;
+   padding-right :5%;
+   border-radius :20px ;
+   width :300px ;
+   text-align :center ;
+   box-shadow :0 10px 30px rgba(0,0,0,0.2) ;
+}
+
+#result-message {
+   color :var(--primary-color) ;
+   font-size :1.5em ;
+   margin-bottom :20px ;
+}
+
+#close-modal {
+   background-color :var(--secondary-color) ;
+   color :white ;
+   border :none ;
+   padding :10px ;
+   font-size :1em ;
+   border-radius :50px ;
+   cursor :pointer ;
+   transition :all .3s ease ;
+}
+
+#close-modal:hover {
+   background-color :#39BEBE ; /* Darker Teal */
+}
+
+#fireworks {
+   position :fixed ;
+   top :0 ;
+   left :0 ;
+   width :100% ;
+   height :100% ;
+   pointer-events :none ;
+}
